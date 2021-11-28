@@ -7,9 +7,15 @@
 
     <div class="post__btns">
       <my-button
+        @click="$router.push(`/posts/${post.id}`)"
+      >
+        Open
+      </my-button>
+      <my-button
           style="margin-top: 0;"
           @click="$emit('remove', post)"
-      >Delete</my-button>
+      >Delete
+      </my-button>
     </div>
   </div>
 </template>
@@ -18,7 +24,7 @@
 export default {
   props: {
     post: {
-      type:Object,
+      type: Object,
       required: true,
     }
   }
@@ -33,5 +39,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.post__btns{
+  display: flex;
 }
 </style>

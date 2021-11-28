@@ -2,6 +2,7 @@
   <form @submit.prevent>
     <h4>Create post</h4>
     <my-input
+        v-focus
         v-model="post.title"
         type="text"
         placeholder="Enter sth"
@@ -37,8 +38,17 @@ export default {
         title: '',
         body: '',
       }
-    }
-  }
+    },
+  },
+  // watch: {
+  //   post:{
+  //     handler(newValue) {
+  //       console.log('sdfsdf')
+  //       console.log(newValue)
+  //     },
+  //     deep: true
+  //   }
+  // }
 }
 </script>
 
